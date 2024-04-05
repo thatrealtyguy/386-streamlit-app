@@ -37,6 +37,7 @@ if user_name != old_name or user_gender != old_gender:  # Check if the name has 
     plt.plot(filtered_data['year'], filtered_data['n'])
 
     # Customize the plot (optional)
+    plt.xlim(min_year, max_year)
     ax.set_title('Popularity Over Time for ' + user_name)
     ax.set_xlabel('Year')
     ax.set_ylabel('Count')
