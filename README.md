@@ -1,2 +1,2 @@
 # 386-streamlit-app
-This repo contains the files for my Streamlit Community Cloud App
+This app is for viewing the popularity of names by gender over time in the U.S.
