@@ -32,7 +32,7 @@ if user_name != old_name or user_gender != old_gender:  # Check if the name has 
   if not filtered_data.empty:
     # Create the line plot (with additional considerations for Streamlit)
     fig, ax = plt.subplots()  # Create a figure and axis for better control
-    ax.plot(filtered_data['year'], filtered_data['n'])
+    plt.plot(filtered_data['year'], filtered_data['n'])
 
     # Customize the plot (optional)
     ax.set_title('Count Over Time for ' + user_name)
