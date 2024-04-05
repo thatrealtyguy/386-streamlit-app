@@ -8,6 +8,7 @@ import streamlit as st
 
 """
 data = pd.read_csv('popular_names.csv')
+data['sex'] = data['sex'].astype(str)
 genders = ['M', 'F']
 
 name = "John"
