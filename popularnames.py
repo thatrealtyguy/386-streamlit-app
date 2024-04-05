@@ -10,6 +10,9 @@ import streamlit as st
 data = pd.read_csv('popular_names.csv')
 genders = ['M', 'F']
 
+name = "John"
+gender = "M"
+
 name = st.text_input("Enter name here")
 gender = st.multiselect("Select gender", genders)
 min_year = st.slider("Starting year", 1910, 2021, 1910)
