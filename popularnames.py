@@ -32,9 +32,10 @@ if user_name != old_name or user_gender != old_gender:  # Check if the name has 
 
   # Check if data was found
   if not filtered_data.empty:
+    plt.style.use('dark_background')
     # Create the line plot (with additional considerations for Streamlit)
     fig, ax = plt.subplots()  # Create a figure and axis for better control
-    plt.plot(filtered_data['year'], filtered_data['n'])
+    plt.plot(filtered_data['year'], filtered_data['n'], color = 'red')
 
     # Customize the plot (optional)
     plt.xlim(min_year, max_year)
