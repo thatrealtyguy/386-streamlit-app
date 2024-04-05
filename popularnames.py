@@ -7,7 +7,7 @@ import streamlit as st
 # Welcome to my popular names app!
 
 """
-data = pd.read_csv('popular_names (1).csv')
+data = pd.read_csv('popular_names.csv')
 genders = ['M', 'F']
 
 with st.tabs:
