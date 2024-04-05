@@ -26,7 +26,7 @@ max_year = st.slider("Ending year", 1910, 2021, 2021)
 if user_name != old_name or user_gender != old_gender:  # Check if the name has changed
   old_name = user_name  # Update old_name for future comparisons
   old_gender = user_gender  # Update old_gender for future comparisons
-  filtered_data1 = names[names['name'] == user_name]
+  filtered_data = names[names['name'] == user_name]
 
   # Check if data was found
   if not filtered_data.empty:
