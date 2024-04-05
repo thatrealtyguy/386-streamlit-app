@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 """
 names = pd.read_csv('popular_names.csv')
 names['sex'] = names['sex'].astype(str)
+names['year'] = names['year'].astype(int)
 genders = ['M', 'F']
 
 old_name = ""
