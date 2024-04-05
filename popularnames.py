@@ -26,15 +26,15 @@ max_year = st.slider("Ending year", 1910, 2021, 2021)
 filtered_data = names[names['name'] == name]
 filtered_data = filtered_data[filtered_data['sex'] == gender]
 
-# Create the density plot
-fig, ax = plt.subplots()  # Create figure and axis for more control
-filtered_data['year'].plot.density(ax=ax, color='red')  # Plot density on the prepared axis
+# Create the line plot (with additional considerations for Streamlit)
+fig, ax = plt.subplots()  # Create a figure and axis for better control
+ax.plot(filtered_data['year'], filtered_data['n'])
 
-# Customize the plot using Matplotlib functions
-ax.set_title('Popularity of ' + name + ' Over Time')  # Set title with chosen name
-ax.set_xlabel('Year')  # Set x-axis label
-ax.set_xlim(1910, 2021)  # Set x-axis limits
-ax.grid()  # Add gridlines
+# Customize the plot (optional)
+ax.set_title('Count Over Time')  # Use ax.set_title for Streamlit compatibility
+ax.set_xlabel('Year')
+ax.set_ylabel('Count')
+ax.grid()
 
 # Display the plot in Streamlit
 st.pyplot(fig)
