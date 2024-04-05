@@ -19,7 +19,7 @@ old_name = ""
 old_gender = ""
 
 user_name = st.text_input("Enter name here")
-user_gender = st.multiselect("Select gender", genders)
+user_gender = st.selectbox("Select gender", genders)
 min_year = st.slider("Starting year", 1910, 2021, 1910)
 max_year = st.slider("Ending year", 1910, 2021, 2021)
 
@@ -28,6 +28,7 @@ if user_name != old_name or user_gender != old_gender:  # Check if the name has 
   old_name = user_name  # Update old_name for future comparisons
   old_gender = user_gender  # Update old_gender for future comparisons
   filtered_data = names[names['name'] == user_name]
+  filtered_data = filtered_data[filtered_data['sex'] == user_gender]
 
   # Check if data was found
   if not filtered_data.empty:
@@ -36,7 +37,7 @@ if user_name != old_name or user_gender != old_gender:  # Check if the name has 
     plt.plot(filtered_data['year'], filtered_data['n'])
 
     # Customize the plot (optional)
-    ax.set_title('Count Over Time for ' + user_name)
+    ax.set_title('Popularity Over Time for ' + user_name)
     ax.set_xlabel('Year')
     ax.set_ylabel('Count')
     ax.grid()
