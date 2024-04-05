@@ -27,7 +27,8 @@ if user_name != old_name or user_gender != old_gender:  # Check if the name has 
   old_name = user_name  # Update old_name for future comparisons
   old_gender = user_gender  # Update old_gender for future comparisons
   filtered_data1 = names[names['name'] == user_name]
-  filtered_data = filtered_data1[filtered_data1['sex'] == user_gender]
+  if user_gender != '':
+    filtered_data = filtered_data1[filtered_data1['sex'] == user_gender]
 
   # Check if data was found
   if not filtered_data.empty:
