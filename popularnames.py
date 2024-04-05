@@ -10,13 +10,10 @@ import streamlit as st
 data = pd.read_csv('popular_names.csv')
 genders = ['M', 'F']
 
-with st.tabs:
-    name = st.text_input("Enter name here")
-
-with st.sidebar:
-    gender = st.multiselect("Select gender", genders)
-    min_year = st.slider("Starting year", 1910, 2021, 1910)
-    max_year = st.slider("Ending year", 1910, 2021, 2021)
+name = st.text_input("Enter name here")
+gender = st.multiselect("Select gender", genders)
+min_year = st.slider("Starting year", 1910, 2021, 1910)
+max_year = st.slider("Ending year", 1910, 2021, 2021)
 
 # Filter the data based on user input
 filtered_data = data[data['name'] == name]
